@@ -17,8 +17,6 @@
 </head>
 
 <body>
-
-
     <div class="wrapper">
         <nav id="sidebar" class="active">
             <div class="sidebar-header">
@@ -69,8 +67,6 @@
                                         class="fas fa-caret-down"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right nav-link-menu">
                                     <ul class="nav-list">
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a>
-                                        </li>
                                         <div class="dropdown-divider"></div>
                                         <li><a href="logout.php" class="dropdown-item"><i
                                                     class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -194,9 +190,26 @@
 
 
 <script>
-
-$(document).ready(function(){$(".editbtn").on("click",function(){$("#myModalPatient").modal("show"),Str=$(this).closest("tr");var t=Str.children("td").map(function(){return $(this).text()}).get();$("#id").val(t[0]),$("#fname").val(t[1]),$("#lname").val(t[2]),$("#gender").val(t[3]),$("#email").val(t[4]),$("#address").val(t[5])})}),$(document).ready(function(){$(".deletebtn").on("click",function(){$("#myModalDeletePatient").modal("show"),Str=$(this).closest("tr");var t=Str.children("td").map(function(){return $(this).text()}).get();console.log(t),$("#deleteId").val(t[0])})}),$(document).ready(function(){$("#dataTables-example").DataTable()});
-
+$(document).ready(function() {
+    $(".editbtn").on("click", function() {
+        $("#myModalPatient").modal("show"), Str = $(this).closest("tr");
+        var t = Str.children("td").map(function() {
+            return $(this).text()
+        }).get();
+        $("#id").val(t[0]), $("#fname").val(t[1]), $("#lname").val(t[2]), $("#gender").val(t[3]), $(
+            "#email").val(t[4]), $("#address").val(t[5])
+    })
+}), $(document).ready(function() {
+    $(".deletebtn").on("click", function() {
+        $("#myModalDeletePatient").modal("show"), Str = $(this).closest("tr");
+        var t = Str.children("td").map(function() {
+            return $(this).text()
+        }).get();
+        console.log(t), $("#deleteId").val(t[0])
+    })
+}), $(document).ready(function() {
+    $("#dataTables-example").DataTable()
+});
 </script>
 
 </html>
